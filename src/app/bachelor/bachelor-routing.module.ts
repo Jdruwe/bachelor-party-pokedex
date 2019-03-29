@@ -2,12 +2,12 @@ import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 
 export const routes: Routes = [
-  {path: '', pathMatch: 'full', redirectTo: 'pokedex'}
+  {path: 'pokedex', loadChildren: './pokedex/pokedex.module#PokedexModule'},
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule {
+export class BachelorRoutingModule {
 }
