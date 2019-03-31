@@ -5,6 +5,7 @@ import {environment} from '../../environments/environment';
 import {AngularFirestoreModule} from '@angular/fire/firestore';
 import {SharedModule} from './shared/shared.module';
 import {AuthRoutingModule} from './auth-routing.module';
+import {AngularFireAuthModule} from '@angular/fire/auth';
 
 @NgModule({
   declarations: [],
@@ -12,6 +13,7 @@ import {AuthRoutingModule} from './auth-routing.module';
     CommonModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
+    AngularFireAuthModule,
     SharedModule.forRoot(),
     AuthRoutingModule
   ]
