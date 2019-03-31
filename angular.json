@@ -136,5 +136,10 @@
       }
     }
   },
-  "defaultProject": "bachelor-party-pokedex"
+  "defaultProject": "bachelor-party-pokedex",
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "scss"
+    }
+  }
 }
