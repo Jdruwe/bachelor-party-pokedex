@@ -23,6 +23,14 @@ export class PokedexComponent implements OnInit, OnDestroy {
       .subscribe();
   }
 
+  nextMission(): void {
+    this.missionsService.nextMission();
+  }
+
+  prevMission(): void {
+    this.missionsService.prevMission();
+  }
+
   ngOnDestroy(): void {
   }
 }

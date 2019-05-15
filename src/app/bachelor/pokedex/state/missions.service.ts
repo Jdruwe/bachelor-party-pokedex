@@ -22,6 +22,14 @@ export class MissionsService {
     );
   }
 
+  nextMission(): void {
+    this.missionsStore.setActive({next: true});
+  }
+
+  prevMission(): void {
+    this.missionsStore.setActive({prev: true});
+  }
+
   private mapToMission(action): Mission {
     const data = action.payload.doc.data();
     const id = action.payload.doc.id;

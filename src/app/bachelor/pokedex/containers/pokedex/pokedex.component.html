@@ -1,7 +1,16 @@
 <ng-container *ngIf="!(loading$ | async); else loadingTpl">
+  <div class="controls">
+    <button class="controls__item" (click)="prevMission()">
+      <i class="material-icons">chevron_left</i>
+    </button>
+    <button class="controls__item" (click)="nextMission()">
+      <i class="material-icons">chevron_right</i>
+    </button>
+
+  </div>
   <app-mission-display [mission]="mission$ | async"></app-mission-display>
 </ng-container>
 
 <ng-template #loadingTpl>
-  Loading...
+  <span>Loading...</span>
 </ng-template>
