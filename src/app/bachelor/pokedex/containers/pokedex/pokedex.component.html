@@ -1,5 +1,7 @@
-<ul>
-  <li class="text" *ngFor="let mission of missions$ | async">
-    {{mission.text}}
-  </li>
-</ul>
+<ng-container *ngIf="!(loading$ | async); else loadingTpl">
+  <app-mission-display [mission]="mission$ | async"></app-mission-display>
+</ng-container>
+
+<ng-template #loadingTpl>
+  Loading...
+</ng-template>
