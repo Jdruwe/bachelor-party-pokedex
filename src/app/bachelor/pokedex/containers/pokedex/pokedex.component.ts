@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/firestore';
-import { Observable } from 'rxjs';
+import {Component, OnInit} from '@angular/core';
+import {Observable} from 'rxjs';
+import {Mission, MissionsQuery, MissionsService} from '../../state';
 
 @Component({
   selector: 'app-pokedex',
@@ -8,14 +8,12 @@ import { Observable } from 'rxjs';
   styleUrls: ['./pokedex.component.scss']
 })
 export class PokedexComponent implements OnInit {
+  missions$: Observable<Mission[]>;
 
-  items: Observable<any[]>;
-
-  constructor(db: AngularFirestore) {
-    this.items = db.collection('items').valueChanges();
+  constructor(private missionsService: MissionsService, private missionsQuery: MissionsQuery) {
   }
 
   ngOnInit() {
+    this.missions$ = this.missionsQuery.selectAll();
   }
-
 }

@@ -8,6 +8,9 @@ import {BachelorModule} from './bachelor/bachelor.module';
 import {AppHeaderComponent} from './components/app-header/app-header.component';
 import {AppFooterComponent} from './components/app-footer/app-footer.component';
 import {AppScreenComponent} from './components/app-screen/app-screen.component';
+import {AkitaNgDevtools} from '@datorama/akita-ngdevtools';
+import {AkitaNgRouterStoreModule} from '@datorama/akita-ng-router-store';
+import {environment} from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -21,6 +24,9 @@ import {AppScreenComponent} from './components/app-screen/app-screen.component';
     AppRoutingModule,
     AuthModule,
     BachelorModule,
+    environment.production ?
+      [] :
+      [AkitaNgDevtools.forRoot(), AkitaNgRouterStoreModule.forRoot()],
   ],
   providers: [],
   bootstrap: [AppComponent]

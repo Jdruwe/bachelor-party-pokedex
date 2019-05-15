@@ -1,10 +1,5 @@
-<p>
-  Pokedex works!
-</p>
-
 <ul>
-  <li class="text" *ngFor="let item of items | async">
-    {{item.name}}
+  <li class="text" *ngFor="let mission of missions$ | async">
+    {{mission.text}}
   </li>
 </ul>
-

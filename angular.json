@@ -143,6 +143,6 @@
     }
   },
   "cli": {
-    "defaultCollection": "@ngrx/schematics"
+    "defaultCollection": "@datorama/akita"
   }
 }
