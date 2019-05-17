@@ -24,7 +24,7 @@ export class LoginComponent {
     const {email, password} = event.value;
     try {
       await this.authService.login(email, password);
-      this.soundService.playSound('assets/sound/battle.mp3');
+      this.soundService.battle();
       this.router.navigate(['/']);
     } catch (err) {
       this.error = err.message;

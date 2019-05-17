@@ -6,7 +6,7 @@ import {AppComponent} from './containers/app/app.component';
 import {AuthModule} from './auth/auth.module';
 import {BachelorModule} from './bachelor/bachelor.module';
 import {AppHeaderComponent} from './components/app-header/app-header.component';
-import {AppFooterComponent} from './components/app-footer/app-footer.component';
+import {AppControlsComponent} from './components/app-controls/app-controls.component';
 import {AppScreenComponent} from './components/app-screen/app-screen.component';
 import {AkitaNgDevtools} from '@datorama/akita-ngdevtools';
 import {AkitaNgRouterStoreModule} from '@datorama/akita-ng-router-store';
@@ -16,7 +16,7 @@ import {environment} from '../environments/environment';
   declarations: [
     AppComponent,
     AppHeaderComponent,
-    AppFooterComponent,
+    AppControlsComponent,
     AppScreenComponent
   ],
   imports: [

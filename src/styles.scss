@@ -7,7 +7,7 @@ html, body {
   width: 100%;
   margin: 0;
   padding: 0;
-  font-family: 'Press Start 2P', cursive;
+  font-family: 'VT323', monospace;
   color: #545e6f;
   display: flex;
   background: #c3c1c2;
@@ -44,4 +44,8 @@ button {
     opacity: .4;
     cursor: not-allowed;
   }
+}
+
+p {
+  margin: 0;
 }

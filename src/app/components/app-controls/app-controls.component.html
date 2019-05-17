@@ -1,0 +1,15 @@
+<div class="footer">
+  <img #controls class="controls" src="assets/img/controls.png" usemap="#image-map" (load)="imageLoaded()">
+
+  <map name="image-map">
+    <area (click)="leftClicked($event)" alt="left" title="left" [coords]="leftCoords" shape="rect">
+    <area (click)="rightClicked($event)" alt="right" title="right" [coords]="rightCoords" shape="rect">
+    <area alt="top" title="top" [coords]="topCoords" shape="rect">
+    <area alt="bottom" title="bottom" coords="68,195,122,231" [coords]="bottomCoords" shape="rect">
+    <area alt="B" title="B" [coords]="bCoords" shape="circle">
+    <area alt="R" title="R" [coords]="rCoords" shape="circle">
+    <area (click)="startClicked()" alt="START" title="START" [coords]="startCoords" shape="poly">
+    <area (click)="selectClicked()" alt="SELECT" title="SELECT" [coords]="selectCoords" shape="poly">
+  </map>
+
+</div>

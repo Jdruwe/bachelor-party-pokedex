@@ -39,7 +39,7 @@ export class PokedexComponent implements OnInit, OnDestroy {
 
   onBadgeClicked(mission: Mission) {
     if (!mission.completed) {
-      this.soundService.playSound('assets/sound/level-up.mp3');
+      this.soundService.levelUp();
     }
     this.missionsService.toggleMission(mission);
   }
