@@ -3,7 +3,15 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebase: {
+    apiKey: 'AIzaSyAy4u1kHqbTrftc4C3E0uKoLA3RN3TIf2A',
+    authDomain: 'bachelor-party-pokedex.firebaseapp.com',
+    databaseURL: 'https://bachelor-party-pokedex.firebaseio.com',
+    projectId: 'bachelor-party-pokedex',
+    storageBucket: 'bachelor-party-pokedex.appspot.com',
+    messagingSenderId: '172025890254'
+  }
 };
 
 /*

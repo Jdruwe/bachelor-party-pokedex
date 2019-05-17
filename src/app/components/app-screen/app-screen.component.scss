@@ -1,17 +1,20 @@
 .screen {
-  margin: 20px 15px;
-  background: #B0B0B0;
-  border: 1px solid black;
-  border-radius: 15px;
+  margin: 15px;
+  background: #88878C;
+  border: 1px solid darken(#88878C, 10%);
+  border-radius: 15px 15px 50px 15px;
   padding: 15px;
   text-align: center;
 
   .screen__content {
     min-height: 200px;
-    background: white;
-    border: 2px solid #494949;
-    border-radius: 15px;
+    max-width: 250px;
     padding: 25px;
+    margin: 0 auto;
+    background: linear-gradient(to bottom right, darken(#899C6C, 20%), #899C6C);
+    border: 1px solid darken(#899C6C, 10%);
+    text-align: left;
+    color: whitesmoke;
   }
 
   .screen_buttons {
