@@ -8,7 +8,7 @@
     </button>
 
   </div>
-  <app-mission-display [mission]="mission$ | async"></app-mission-display>
+  <app-mission-display *ngIf="mission$" (clicked)="onBadgeClicked($event)" [mission]="mission$ | async"></app-mission-display>
 </ng-container>
 
 <ng-template #loadingTpl>

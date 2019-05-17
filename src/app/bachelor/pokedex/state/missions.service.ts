@@ -3,12 +3,15 @@ import {AngularFirestore, AngularFirestoreCollection} from '@angular/fire/firest
 import {Injectable} from '@angular/core';
 import {map, tap} from 'rxjs/operators';
 import {createMission, Mission} from './mission.model';
+import {MissionsQuery} from './missions.query';
 
 @Injectable()
 export class MissionsService {
   missionsCollection: AngularFirestoreCollection;
 
-  constructor(private missionsStore: MissionsStore, private afs: AngularFirestore) {
+  constructor(private missionsStore: MissionsStore,
+              private missionsQuery: MissionsQuery,
+              private afs: AngularFirestore) {
     this.missionsCollection = afs.collection('missions');
   }
 
@@ -17,9 +20,15 @@ export class MissionsService {
       map(actions => actions.map(this.mapToMission)),
       tap(missions => {
         this.missionsStore.set(missions);
-        this.missionsStore.setActive(missions[0].id);
+        this.setFirstMissionActive(missions[0]);
       })
     );
+  }
+
+  private setFirstMissionActive(mission: Mission) {
+    if (!this.missionsQuery.hasActive()) {
+      this.missionsStore.setActive(mission.id);
+    }
   }
 
   nextMission(): void {
@@ -34,5 +43,11 @@ export class MissionsService {
     const data = action.payload.doc.data();
     const id = action.payload.doc.id;
     return createMission({id, ...data});
+  }
+
+  toggleMission(mission: Mission) {
+    this.missionsCollection.doc(mission.id as string).update({
+      completed: !mission.completed
+    });
   }
 }
