@@ -1,9 +1,6 @@
 <div>
   <app-auth-form (submitted)="loginUser($event)">
     <p>Hi trainer!</p>
-    <button type="submit">
-      Login
-    </button>
     <div class="error" *ngIf="error">
       {{ error }}
     </div>

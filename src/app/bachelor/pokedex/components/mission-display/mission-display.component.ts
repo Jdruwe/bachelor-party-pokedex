@@ -10,7 +10,7 @@ interface Styling {
   templateUrl: './mission-display.component.html',
   styleUrls: ['./mission-display.component.scss']
 })
-export class MissionDisplayComponent implements OnInit {
+export class MissionDisplayComponent {
   @Input()
   mission: Mission;
 
@@ -20,7 +20,8 @@ export class MissionDisplayComponent implements OnInit {
   constructor() {
   }
 
-  ngOnInit() {
+  badgeClicked() {
+    this.clicked.emit(this.mission);
   }
 
   calculateBadgeStyles(): Styling {
@@ -36,17 +37,12 @@ export class MissionDisplayComponent implements OnInit {
             rgba(0,0,0,.2) 3px,
             transparent 6px
         )`,
-        'background-blend-mode': 'overlay',
-        'background-size': 'cover'
+        'background-size': 'contain'
       };
     } else {
       return {
         background: `url("assets/img/badges/${this.mission.badge}.png")`
       };
     }
-  }
-
-  badgeClicked() {
-    this.clicked.emit(this.mission);
   }
 }
