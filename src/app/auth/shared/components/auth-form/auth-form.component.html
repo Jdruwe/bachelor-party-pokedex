@@ -1,5 +1,5 @@
 <div class="auth-form">
-  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <form [formGroup]="form">
 
     <ng-content select="p"></ng-content>
 
@@ -25,9 +25,5 @@
     </div>
 
     <ng-content select=".error"></ng-content>
-
-    <div class="auth-form__action">
-      <ng-content select="button"></ng-content>
-    </div>
   </form>
 </div>

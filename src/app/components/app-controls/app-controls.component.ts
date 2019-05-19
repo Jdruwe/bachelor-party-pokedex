@@ -1,5 +1,5 @@
-import {Component, ElementRef, ViewChild} from '@angular/core';
-import {SoundService} from "../../sound.service";
+import {Component, ElementRef, EventEmitter, Output, ViewChild} from '@angular/core';
+import {SoundService} from '../../sound.service';
 
 @Component({
   selector: 'app-controls',
@@ -11,6 +11,9 @@ export class AppControlsComponent {
   @ViewChild('controls')
   controls: ElementRef;
 
+  @Output()
+  controlUsed = new EventEmitter<string>();
+
   leftCoords: number[];
   rightCoords: number[];
   topCoords: number[];
@@ -18,7 +21,7 @@ export class AppControlsComponent {
   bCoords: number[];
   rCoords: number[];
   startCoords: number[];
-  selectCoords: number[];
+  completeCoords: number[];
 
   private widthAmplifier: number;
   private heightAmplifier: number;
@@ -37,8 +40,8 @@ export class AppControlsComponent {
     this.bottomCoords = this.mapCoords([68, 195, 122, 231]);
     this.bCoords = this.mapCoords([352, 177, 33]);
     this.rCoords = this.mapCoords([432, 140, 33]);
-    this.startCoords = this.mapCoords([222, 299, 232, 289, 280, 266, 291, 269, 297, 284, 288, 301, 242, 323, 227, 317, 222, 312]);
-    this.selectCoords = this.mapCoords([190, 266, 135, 291, 133, 309, 144, 320, 203, 298, 211, 282, 202, 269]);
+    this.startCoords = this.mapCoords([190, 266, 135, 291, 133, 309, 144, 320, 203, 298, 211, 282, 202, 269]);
+    this.completeCoords = this.mapCoords([222, 299, 232, 289, 280, 266, 291, 269, 297, 284, 288, 301, 242, 323, 227, 317, 222, 312]);
   }
 
   private mapCoords(coords: number[]) {
@@ -51,21 +54,8 @@ export class AppControlsComponent {
     });
   }
 
-  rightClicked() {
-    event.preventDefault();
+  buttonClicked(button: string) {
     this.soundService.button();
-  }
-
-  leftClicked() {
-    event.preventDefault();
-    this.soundService.button();
-  }
-
-  selectClicked() {
-    this.soundService.button();
-  }
-
-  startClicked() {
-    this.soundService.button();
+    this.controlUsed.emit(button);
   }
 }
