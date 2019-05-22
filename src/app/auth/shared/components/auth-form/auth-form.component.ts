@@ -1,6 +1,6 @@
 import {Component, EventEmitter, OnDestroy, OnInit, Output} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {Controlable} from '../../../../controlable.interface';
+import {Controllable} from '../../../../controlable.interface';
 import {untilDestroyed} from 'ngx-take-until-destroy';
 import {ControlsQuery} from '../../../../state';
 
@@ -9,7 +9,7 @@ import {ControlsQuery} from '../../../../state';
   templateUrl: './auth-form.component.html',
   styleUrls: ['./auth-form.component.scss']
 })
-export class AuthFormComponent implements OnInit, OnDestroy, Controlable {
+export class AuthFormComponent implements OnInit, OnDestroy, Controllable {
 
   @Output()
   submitted = new EventEmitter<FormGroup>();

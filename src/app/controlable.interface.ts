@@ -1,3 +1,3 @@
-export interface Controlable {
+export interface Controllable {
   bindControls(): void;
 }

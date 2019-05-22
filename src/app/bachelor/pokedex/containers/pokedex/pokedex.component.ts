@@ -4,14 +4,14 @@ import {Mission, MissionsQuery, MissionsService} from '../../state';
 import {untilDestroyed} from 'ngx-take-until-destroy';
 import {SoundService} from '../../../../sound.service';
 import {ControlsQuery} from '../../../../state';
-import {Controlable} from '../../../../controlable.interface';
+import {Controllable} from '../../../../controlable.interface';
 
 @Component({
   selector: 'app-pokedex',
   templateUrl: './pokedex.component.html',
   styleUrls: ['./pokedex.component.scss']
 })
-export class PokedexComponent implements OnInit, OnDestroy, Controlable {
+export class PokedexComponent implements OnInit, OnDestroy, Controllable {
   loading$: Observable<boolean>;
   mission$: Observable<Mission>;
 

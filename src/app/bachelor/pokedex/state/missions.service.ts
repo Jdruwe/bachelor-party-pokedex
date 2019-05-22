@@ -4,8 +4,11 @@ import {Injectable} from '@angular/core';
 import {map, tap} from 'rxjs/operators';
 import {createMission, Mission} from './mission.model';
 import {MissionsQuery} from './missions.query';
+import {PokedexServiceModule} from '../pokedex-service.module';
 
-@Injectable()
+@Injectable({
+  providedIn: PokedexServiceModule
+})
 export class MissionsService {
   missionsCollection: AngularFirestoreCollection;
 
