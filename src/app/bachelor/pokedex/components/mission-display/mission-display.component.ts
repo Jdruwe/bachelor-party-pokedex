@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Mission} from '../../state';
 
 interface Styling {
@@ -8,7 +8,8 @@ interface Styling {
 @Component({
   selector: 'app-mission-display',
   templateUrl: './mission-display.component.html',
-  styleUrls: ['./mission-display.component.scss']
+  styleUrls: ['./mission-display.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class MissionDisplayComponent {
   @Input()

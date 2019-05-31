@@ -1,4 +1,4 @@
-import {Component, EventEmitter, OnDestroy, OnInit, Output} from '@angular/core';
+import {ChangeDetectionStrategy, Component, EventEmitter, OnDestroy, OnInit, Output} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Controllable} from '../../../../controlable.interface';
 import {untilDestroyed} from 'ngx-take-until-destroy';
@@ -7,7 +7,8 @@ import {ControlsQuery} from '../../../../state';
 @Component({
   selector: 'app-auth-form',
   templateUrl: './auth-form.component.html',
-  styleUrls: ['./auth-form.component.scss']
+  styleUrls: ['./auth-form.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AuthFormComponent implements OnInit, OnDestroy, Controllable {
 

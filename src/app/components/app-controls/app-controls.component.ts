@@ -1,10 +1,11 @@
-import {Component, ElementRef, EventEmitter, Output, ViewChild} from '@angular/core';
+import {ChangeDetectionStrategy, Component, ElementRef, EventEmitter, Output, ViewChild} from '@angular/core';
 import {SoundService} from '../../sound.service';
 
 @Component({
   selector: 'app-controls',
   templateUrl: './app-controls.component.html',
-  styleUrls: ['./app-controls.component.scss']
+  styleUrls: ['./app-controls.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppControlsComponent {
 
